@@ -4,10 +4,19 @@
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <title>tic[tac]toe</title>
 </head>
 <body>
 <header>
+<section id="popUp">
+  <div id="popup" >
+  <div id="window">
+  <div id="popupwindow"></div>
+  <div id="button" onclick="toggle('#popup')">Keep Playing</div>
+  </div>
+  </div>
+</section>
 <table class="header-grid">
 <tr>
 <td>
@@ -17,20 +26,20 @@
 </td>
 <td>
 <table class="score">
-<tr>
+<tr id="x-marker" class="x-marker">
 <td>
 <p>X</p>
 </td>
-<td>
-n
+<td id="player1Wins">
+ 0
 </td>
 </tr>
-<tr>
+<tr id="o-marker">
 <td>
 O
 </td>
-<td>
-n
+<td id="player2Wins">
+ 0
 </td>
 </tr>
 </table>
@@ -42,43 +51,50 @@ n
 <table>
 <tr>
 <td>
-<div class="top-left"></div>
+<div id="top-left" class='circle'></div>
 </td>
-<td><div class="top-center">
+<td><div id="top-center" class='circle'>
 </div></td>
-<td><div class="top-right">
+<td><div id="top-right" class='circle'>
 </div></td>
 </tr>
 <tr>
 <td>
-<div class="center-left"></div>
+<div id="center-left" class='circle'></div>
 </td>
-<td><div class="center">
+<td><div id="center" class='circle'>
 </div></td>
-<td><div class="center-right">
+<td><div id="center-right" class='circle'>
 </div></td>
 </tr>
 <tr>
 <td>
-<div class="bottom-left"></div>
+<div id="bottom-left" class='circle'></div>
 </td>
-<td><div class="bottom-center">
+<td><div id="bottom-center" class='circle'>
 </div></td>
-<td><div class="bottom-right">
+<td><div id="bottom-right" class='circle'>
 </div></td>
 </tr>
 </section>
-<section>
-  <span class="timer">
-00:29
+<span id="timer" class="timer">
 </span>
 </section>
+<script src="js/tictactoe.js"></script>
 </body>
 <footer>
-<div class="menu">
+<div class="dot" onclick="toggle('.menu')"> </div>
+<div class ="menu">
+  <nav>
+    <ul>
+      <li><a id="play-computer"  title="" onclick="gameMode('Computer')">Play Computer</a></li>
+      <li><a id="two-players"  title="" onclick="gameMode('TwoPlayers')">2 Player</a></li>
+      <li><a id="close"  title=""> X Close</a></li>
+    </ul>
+  </nav>
 </div>
 <div>
-  <img src="images/lines-desktop.png" alt="">
+  <img id="lines" src="images/lines-desktop.png" width="100%" alt="">
   </div>
 </footer>
 </html>
