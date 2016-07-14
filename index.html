@@ -1,100 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <title>tic[tac]toe</title>
 </head>
 <body>
-<header>
-<section id="popUp">
+<div id="popUp">
   <div id="popup" >
   <div id="window">
   <div id="popupwindow"></div>
-  <div id="button" onclick="toggle('#popup')">Keep Playing</div>
+  <div id="button" onclick="toggle('#popUp', 'close')">Keep Playing</div>
   </div>
   </div>
-</section>
-<table class="header-grid">
-<tr>
-<td>
+</div>
+<div id="header">
 <div class="logo">
 <h1>tic[tac]toe</h1>
 </div>
-</td>
-<td>
 <table class="score">
 <tr id="x-marker" class="x-marker">
-<td>
+<td style="width:30px">
 <p>X</p>
 </td>
-<td id="player1Wins">
+<td style="width:30px">
  0
 </td>
 </tr>
 <tr id="o-marker">
-<td>
+<td style="width:30px">
 O
 </td>
-<td id="player2Wins">
+<td style="width:30px" id="player2Wins">
  0
 </td>
 </tr>
 </table>
-</td>
-</tr>
-</table>
-<header>
-<section class="grid">
-<table>
-<tr>
-<td>
-<div id="top-left" class='circle'></div>
-</td>
-<td><div id="top-center" class='circle'>
-</div></td>
-<td><div id="top-right" class='circle'>
-</div></td>
-</tr>
-<tr>
-<td>
-<div id="center-left" class='circle'></div>
-</td>
-<td><div id="center" class='circle'>
-</div></td>
-<td><div id="center-right" class='circle'>
-</div></td>
-</tr>
-<tr>
-<td>
-<div id="bottom-left" class='circle'></div>
-</td>
-<td><div id="bottom-center" class='circle'>
-</div></td>
-<td><div id="bottom-right" class='circle'>
-</div></td>
-</tr>
-</section>
+</div>
+<div id="grid-container">
+<div class="grid">
+    <table>
+    <tr>
+    <td>
+    <div id="top-left" class='circle'></div>
+    </td>
+    <td><div id="top-center" class='circle'>
+    </div></td>
+    <td><div id="top-right" class='circle'>
+    </div></td>
+    </tr>
+    <tr>
+    <td>
+    <div id="center-left" class='circle'></div>
+    </td>
+    <td><div id="center" class='circle'>
+    </div></td>
+    <td><div id="center-right" class='circle'>
+    </div></td>
+    </tr>
+    <tr>
+    <td>
+    <div id="bottom-left" class='circle'></div>
+    </td>
+    <td><div id="bottom-center" class='circle'>
+    </div></td>
+    <td><div id="bottom-right" class='circle'>
+    </div></td>
+    </tr>
+    </table>
+</div>
+</div>
 <span id="timer" class="timer">
 </span>
-</section>
+<footer>
+  <div id="menu-container">
+    <div id="dot-container" onclick="toggle('.menu', 'none')">
+        <div class="dot" > </div>
+    </div>
+        <div class ="menu">
+          <nav>
+            <ul>
+              <li><a id="play-computer"  title="" onclick="gameMode('Computer')">Play Computer</a></li>
+              <li><a id="two-players"  title="" onclick="gameMode('TwoPlayers')">2 Player</a></li>
+              <li><a id="close"  title="" onclick="toggle('.menu', 'none')"> Close</a></li>
+            </ul>
+          </nav>
+        </div>
+    </div>
+    <div>
+      <img id="lines" src="images/lines-desktop.png" width="100%" alt="">
+      </div>
+</footer>
 <script src="js/tictactoe.js"></script>
 </body>
-<footer>
-<div class="dot" onclick="toggle('.menu')"> </div>
-<div class ="menu">
-  <nav>
-    <ul>
-      <li><a id="play-computer"  title="" onclick="gameMode('Computer')">Play Computer</a></li>
-      <li><a id="two-players"  title="" onclick="gameMode('TwoPlayers')">2 Player</a></li>
-      <li><a id="close"  title=""> X Close</a></li>
-    </ul>
-  </nav>
-</div>
-<div>
-  <img id="lines" src="images/lines-desktop.png" width="100%" alt="">
-  </div>
-</footer>
 </html>

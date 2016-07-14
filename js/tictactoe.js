@@ -10,6 +10,7 @@ var board = ['top-left','top-center','top-right',
 var emptySpaces = [0,0,0,
                     0,0,0,
                     0,0,0];
+var winner = "none";
 var computerMoves=0;
 var moves=0;
 var gameType = "TwoPlayers";
@@ -103,7 +104,9 @@ function getWinner() {
         } else if(board[2] === board[5]  && board[5] === board[8]) {
             score(activePlayer);
         } else {
+          winner = "none";
           switchActivePlayer();
+          return;
         }
 }
 
@@ -132,25 +135,15 @@ function score(activePlayer) {
         if(activePlayer === 'Player1'){
           Player1Wins++;
           $('#popupwindow').html("Player 1 Wins!");
-          toggle('#popUp');
+          toggle('#popUp', 'none');
           $('#player1Wins').html(Player1Wins);
-        setTimeout(clearBoard,500);
-        activePlayer = "Player1";
-        overallWinner();
-        }
-        else if (activePlayer === "Player2"){
+          activePlayer = "Player1";
+        } else if (activePlayer === "Player2"){
           Player2Wins++;
           $('#popupwindow').html("Player 2 Wins!");
-          toggle('#popUp');
+          toggle('#popUp', 'none');
           $('#player2Wins').html(Player2Wins);
-          setTimeout(clearBoard,500);
           activePlayer = "Player2";
-          overallWinner();
-            if(gameType ==="Computer") {
-              console.log('get computer move from score')
-              getComputerMove();
-            }
-
         }
   }
 
@@ -159,11 +152,12 @@ function overallWinner(){
   console.log('overall winner')
   if(Player1Wins === rounds) {
     $('#popupwindow').html("Player 1 Wins!");
-    toggle('#popUp');
+    toggle('#popUp', 'overall');
     $('#player1Wins').html('0');
   } else if(Player2Wins === rounds) {
     $('#popupwindow').html("Player 2 Wins!");
-    toggle('#popUp');
+    $('#button').html("Player 2 Wins!");
+    toggle('#popUp', 'overall');
     $('#player2Wins').html('0');
   } else {
     return;
@@ -171,8 +165,28 @@ function overallWinner(){
 }
 
 //shows and hides menu
-function toggle(section){
-  $(section).toggle();
+function toggle(section, button){
+console.log(section)
+console.log("toggling")
+  if (button === "overall"){
+    $(section).toggle();
+  }
+  if(button === "none") {
+    $(section).toggle();
+  }else if(button ==="close") {
+    $(section).toggle();
+    keepPlaying();
+  }
+}
+
+function keepPlaying(){
+  overallWinner();
+  clearBoard();
+
+            if(gameType ==="Computer" && activePlayer === "Player2") {
+              console.log('get computer move from score')
+              setTimeout(getComputerMove, 500);
+            }
 }
 
 //changes game mode
@@ -209,7 +223,7 @@ function getComputerMove() {
     }
 
 
-
+//random play
 function randomPlay(){
   console.log('random play');
     var availableSpaces = [];
