@@ -4,95 +4,87 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <title>tic[tac]toe</title>
 </head>
 <body>
-<div id="popUp">
-  <div id="popup" >
-  <div id="window">
-  <div id="popupwindow"></div>
-  <div id="button" onclick="toggle('#popUp', 'close')">Keep Playing</div>
+<div class="modal" data-modal>
+  <div class="modal-overlay">
+  <div class="modal-inner">
+  <div class="modal-content" data-modal-content></div>
+  <div class="button" data-modal-button>Keep Playing</div>
   </div>
   </div>
 </div>
-<div id="header">
-<div class="logo">
-<h1>tic[tac]toe</h1>
+<div class="header">
+  <h1 class="logo">tic[tac]toe</h1>
+  <table class="score-markers-table">
+    <tr id="x-marker">
+      <td class="score-marker">X</td>
+      <td class="score-marker" data-score-marker-player="x">0</td>
+    </tr>
+    <tr id="o-marker">
+      <td class="score-marker" >O</td>
+      <td class="score-marker" data-score-marker-player="o">0</td>
+    </tr>
+  </table>
 </div>
-<table class="score">
-<tr id="x-marker" class="x-marker">
-<td style="width:30px">
-<p>X</p>
-</td>
-<td style="width:30px">
- 0
-</td>
-</tr>
-<tr id="o-marker">
-<td style="width:30px">
-O
-</td>
-<td style="width:30px" id="player2Wins">
- 0
-</td>
-</tr>
-</table>
-</div>
-<div id="grid-container">
-<div class="grid">
-    <table>
+<div class="board-container">
+  <table class="board">
     <tr>
-    <td>
-    <div id="top-left" class='circle'></div>
-    </td>
-    <td><div id="top-center" class='circle'>
-    </div></td>
-    <td><div id="top-right" class='circle'>
-    </div></td>
+      <td>
+        <div id="top-left" class='circle' data-board-position="0" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="top-center" class='circle' data-board-position="1" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="top-right" class='circle' data-board-position="2" data-user-token="0"></div>
+      </td>
     </tr>
     <tr>
-    <td>
-    <div id="center-left" class='circle'></div>
-    </td>
-    <td><div id="center" class='circle'>
-    </div></td>
-    <td><div id="center-right" class='circle'>
-    </div></td>
+      <td>
+        <div id="center-left" class='circle' data-board-position="3" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="center" class='circle' data-board-position="4" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="center-right" class='circle' data-board-position="5" data-user-token="0"></div>
+      </td>
     </tr>
     <tr>
-    <td>
-    <div id="bottom-left" class='circle'></div>
-    </td>
-    <td><div id="bottom-center" class='circle'>
-    </div></td>
-    <td><div id="bottom-right" class='circle'>
-    </div></td>
+      <td>
+        <div id="bottom-left" class='circle' data-board-position="6" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="bottom-center" class='circle' data-board-position="7" data-user-token="0"></div>
+      </td>
+      <td>
+        <div id="bottom-right" class='circle' data-board-position="8" data-user-token="0"></div>
+      </td>
     </tr>
-    </table>
+  </table>
 </div>
-</div>
-<span id="timer" class="timer">
-</span>
-<footer>
-  <div id="menu-container">
-    <div id="dot-container" onclick="toggle('.menu', 'none')">
-        <div class="dot" > </div>
+<span id="timer" class="timer"></span>
+<footer class="footer">
+  <div class="menu-container">
+    <div class="dot-container" data-menu-toggle>
+      <div class="dot" ></div>
     </div>
-        <div class ="menu">
-          <nav>
-            <ul>
-              <li><a id="play-computer"  title="" onclick="gameMode('Computer')">Play Computer</a></li>
-              <li><a id="two-players"  title="" onclick="gameMode('TwoPlayers')">2 Player</a></li>
-              <li><a id="close"  title="" onclick="toggle('.menu', 'none')"> Close</a></li>
-            </ul>
-          </nav>
-        </div>
+    <div class="menu" data-menu>
+      <nav>
+        <ul>
+          <li><a id="play-computer"  title="" onclick="gameMode('Computer')">Play Computer</a></li>
+          <li><a id="two-players"  title="" onclick="gameMode('TwoPlayers')">2 Player</a></li>
+          <li><a id="close"  title="" data-menu-toggle> Close</a></li>
+        </ul>
+      </nav>
     </div>
-    <div>
-      <img id="lines" src="images/lines-desktop.png" width="100%" alt="">
-      </div>
+  </div>
+  <div class="divider">
+  </div>
 </footer>
-<script src="js/tictactoe.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
