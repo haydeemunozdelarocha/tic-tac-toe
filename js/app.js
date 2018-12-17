@@ -326,9 +326,13 @@ function add(a, b) {
 // Init click handler on board spaces to record user move
 function initBoardClickHandlers() {
   $('[data-board-position]').click(function(e) {
-    var $clickedBoardPosition = $(e.target);
+    if (activePlayerIndex === 1 && gameType === "Computer") {
+      return;
+    } else {
+      var $clickedBoardPosition = $(e.target);
 
-    return setPlayerToken($clickedBoardPosition);
+      return setPlayerToken($clickedBoardPosition);
+    }
   });
 }
 
@@ -336,7 +340,7 @@ function initBoardClickHandlers() {
 $(document).on('gameWinner', function(e, winner) {
   setTimeout(() => {
     triggerWinnerPopup('game', winner);
-  }, 700);
+  }, 1000);
   clearScore();
 });
 
@@ -349,7 +353,7 @@ $(document).on('roundWinner', function(e, winner) {
   } else {
     setTimeout(() => {
       triggerWinnerPopup('round', winner);
-    }, 700);
+    }, 1000);
   }
 });
 
