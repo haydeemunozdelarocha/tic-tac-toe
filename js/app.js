@@ -5,13 +5,13 @@ var gameType = "Computer";
 var players = [{
   name: 'Player 1',
   symbol: 'x',
-  winningRounds: 4,
+  winningRounds: 0,
   scorePoints: 3
 },
 {
   name: 'Player 2',
   symbol: 'o',
-  winningRounds: 4,
+  winningRounds: 0,
   scorePoints: 4
 }];
 
