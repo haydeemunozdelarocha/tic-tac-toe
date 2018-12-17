@@ -3,7 +3,7 @@
 
 To play:
 
-1. Go to: tictactoe.haydeemunozdelarocha.com
+1. Go to: <a href="http://tictactoe.haydeemunozdelarocha.com">http://tictactoe.haydeemunozdelarocha.com</a>
 1. Click on an empty spot
 1. Let the computer go
 
