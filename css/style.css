@@ -99,6 +99,7 @@ p {
 }
 
 .logo:hover {
+  cursor: pointer;
   opacity: .7;
 }
 
@@ -128,6 +129,7 @@ p {
   background-repeat: no-repeat;
   background-size: 70%;
   border-radius: 50%;
+  cursor: pointer;
   height: 120px;
   transition: all .3s ease-in;
   width: 120px;
