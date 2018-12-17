@@ -53,7 +53,7 @@ function checkRoundWinner() {
     activePlayer.winningRounds++;
     return $(document).trigger('roundWinner', activePlayer);
   } else {
-    return boardHasEmptySpaces() ? switchActivePlayer() : setTimeout(clearBoard, 300);
+    return boardHasEmptySpaces() ? switchActivePlayer() : setTimeout(clearBoard, 800);
   }
 }
 

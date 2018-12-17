@@ -118,10 +118,12 @@ p {
 
 [data-user-token="x"] {
   background-image: url("../images/x-desktop.png");
+  transition: all .5s ease-in;
 }
 
 [data-user-token="o"] {
   background-image: url("../images/o-desktop.png");
+  transition: all .5s ease-in;
 }
 
 .circle {
