@@ -1,2 +1,14 @@
 <h1>Tic Tac Toe</h1>
-<p>Minimalistic Tic Tac Toe with a basic play Al function and Two Player Mode.</p>
+<p>Custom design minimalistic Tic Tac Toe with a basic play AI function and Two Player Mode.</p>
+
+To play:
+
+1. Go to: tictactoe.haydeemunozdelarocha.com
+1. Click on an empty spot
+1. Let the computer go
+
+
+To trigger Two Player Mode:
+1. Click on the dot at the bottom
+1. Look for the two player mode in the menu
+1. Enjoy!
